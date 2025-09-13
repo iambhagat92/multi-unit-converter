@@ -1,48 +1,48 @@
-:root {
-  --bg-color: #f5f5f5;
-  --card-color: #ffffff;
-  --text-color: #333;
-  --accent-color: #4CAF50;
-}
-
-body.dark {
-  --bg-color: #1e1e1e;
-  --card-color: #2c2c2c;
-  --text-color: #f5f5f5;
-  --accent-color: #76FF03;
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background: #f4f7fb;
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
 header {
+  background: #4a90e2;
+  color: #fff;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: var(--card-color);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 header h1 {
-  margin: 0;
+  font-size: 1.5rem;
 }
 
-header nav a {
+nav a {
+  color: #fff;
   margin: 0 10px;
   text-decoration: none;
-  color: var(--text-color);
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 #theme-toggle {
-  cursor: pointer;
-  background: none;
+  background: transparent;
   border: none;
   font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 main {
@@ -53,48 +53,137 @@ main {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 20px;
+  font-weight: 500;
+  color: #555;
 }
 
+/* ===== Converter Container ===== */
 .converter-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
+/* ===== Converter Card ===== */
 .converter-card {
-  background-color: var(--card-color);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.converter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .converter-card h2 {
-  margin-top: 0;
-  color: var(--accent-color);
+  margin-bottom: 10px;
+  color: #4a90e2;
+  font-size: 1.2rem;
 }
 
-input, select, button {
-  margin: 5px 0;
-  padding: 5px;
+.converter-card p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Inputs & Selects */
+.converter-card input,
+.converter-card select {
   width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
 }
 
-button {
-  background-color: var(--accent-color);
-  border: none;
+.converter-card input:focus,
+.converter-card select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Result */
+.converter-card p span {
+  font-weight: bold;
+  color: #222;
+}
+
+/* Buttons */
+.converter-card button {
+  background: #4a90e2;
   color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
   cursor: pointer;
-  border-radius: 5px;
+  margin-top: 8px;
+  transition: background 0.3s;
 }
 
-button:hover {
-  opacity: 0.9;
+.converter-card button:hover {
+  background: #357abd;
 }
 
+/* ===== Sections ===== */
+section {
+  margin-top: 40px;
+}
+
+section h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+section p {
+  color: #555;
+}
+
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 15px;
-  background-color: var(--card-color);
-  margin-top: 20px;
+  background: #4a90e2;
+  color: #fff;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
+/* ===== Dark Mode ===== */
+.dark-mode {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  background: #333;
+}
+
+.dark-mode nav a {
+  color: #eee;
+}
+
+.dark-mode .converter-card {
+  background: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .converter-card h2 {
+  color: #4a90e2;
+}
+
+.dark-mode .converter-card p {
+  color: #ccc;
+}
+
+.dark-mode footer {
+  background: #333;
+}
