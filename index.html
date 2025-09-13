@@ -1,78 +1,205 @@
-<!-- Area Converter -->
-<div class="converter-card">
-  <h2>Area</h2>
-  <input type="number" id="area-input" placeholder="Enter value">
-  <select id="area-from">
-    <option value="sqm">Square Meter</option>
-    <option value="sqkm">Square Kilometer</option>
-    <option value="acre">Acre</option>
-    <option value="sqmile">Square Mile</option>
-  </select>
-  <select id="area-to">
-    <option value="sqm">Square Meter</option>
-    <option value="sqkm">Square Kilometer</option>
-    <option value="acre">Acre</option>
-    <option value="sqmile">Square Mile</option>
-  </select>
-  <p>Result: <span id="area-result">0</span></p>
-  <button onclick="resetConverter('area')">Reset</button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Easy Unit Converter - Convert Length, Weight, Temperature, Area & More</title>
+  <meta name="description" content="Free online unit converter for Length, Weight, Temperature, Area, Volume, Speed, and Time. Simple, fast, and mobile-friendly tool.">
+  <meta name="keywords" content="unit converter, length, weight, temperature, area, volume, speed, time, online calculator">
+  <meta name="author" content="Ashok Bhagat">
+  <meta name="robots" content="index, follow">
 
-<!-- Volume Converter -->
-<div class="converter-card">
-  <h2>Volume</h2>
-  <input type="number" id="volume-input" placeholder="Enter value">
-  <select id="volume-from">
-    <option value="liter">Liter</option>
-    <option value="ml">Milliliter</option>
-    <option value="gallon">Gallon</option>
-    <option value="cup">Cup</option>
-  </select>
-  <select id="volume-to">
-    <option value="liter">Liter</option>
-    <option value="ml">Milliliter</option>
-    <option value="gallon">Gallon</option>
-    <option value="cup">Cup</option>
-  </select>
-  <p>Result: <span id="volume-result">0</span></p>
-  <button onclick="resetConverter('volume')">Reset</button>
-</div>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Easy Unit Converter</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle">🌙</button>
+    </nav>
+  </header>
 
-<!-- Speed Converter -->
-<div class="converter-card">
-  <h2>Speed</h2>
-  <input type="number" id="speed-input" placeholder="Enter value">
-  <select id="speed-from">
-    <option value="kmh">km/h</option>
-    <option value="mph">mph</option>
-    <option value="ms">m/s</option>
-  </select>
-  <select id="speed-to">
-    <option value="kmh">km/h</option>
-    <option value="mph">mph</option>
-    <option value="ms">m/s</option>
-  </select>
-  <p>Result: <span id="speed-result">0</span></p>
-  <button onclick="resetConverter('speed')">Reset</button>
-</div>
+  <main>
+    <section id="home">
+      <p class="tagline">Convert Units Quickly & Easily</p>
 
-<!-- Time Converter -->
-<div class="converter-card">
-  <h2>Time</h2>
-  <input type="number" id="time-input" placeholder="Enter value">
-  <select id="time-from">
-    <option value="second">Seconds</option>
-    <option value="minute">Minutes</option>
-    <option value="hour">Hours</option>
-    <option value="day">Days</option>
-  </select>
-  <select id="time-to">
-    <option value="second">Seconds</option>
-    <option value="minute">Minutes</option>
-    <option value="hour">Hours</option>
-    <option value="day">Days</option>
-  </select>
-  <p>Result: <span id="time-result">0</span></p>
-  <button onclick="resetConverter('time')">Reset</button>
-</div>
+      <!-- All Converters Here -->
+      <div class="converter-container">
 
+        <!-- Length Converter -->
+        <div class="converter-card">
+          <h2>Length Converter</h2>
+          <p>Convert meters, kilometers, miles, inches, feet, yards quickly.</p>
+          <input type="number" id="length-input" placeholder="Enter value">
+          <select id="length-from">
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="mile">Mile</option>
+            <option value="inch">Inch</option>
+            <option value="foot">Foot</option>
+            <option value="yard">Yard</option>
+          </select>
+          <select id="length-to">
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="mile">Mile</option>
+            <option value="inch">Inch</option>
+            <option value="foot">Foot</option>
+            <option value="yard">Yard</option>
+          </select>
+          <p>Result: <span id="length-result">0</span></p>
+          <button onclick="resetConverter('length')">Reset</button>
+        </div>
+
+        <!-- Weight Converter -->
+        <div class="converter-card">
+          <h2>Weight Converter</h2>
+          <p>Convert kilograms, grams, pounds, ounces quickly.</p>
+          <input type="number" id="weight-input" placeholder="Enter value">
+          <select id="weight-from">
+            <option value="kg">Kg</option>
+            <option value="g">Gram</option>
+            <option value="lb">Pound</option>
+            <option value="oz">Ounce</option>
+          </select>
+          <select id="weight-to">
+            <option value="kg">Kg</option>
+            <option value="g">Gram</option>
+            <option value="lb">Pound</option>
+            <option value="oz">Ounce</option>
+          </select>
+          <p>Result: <span id="weight-result">0</span></p>
+          <button onclick="resetConverter('weight')">Reset</button>
+        </div>
+
+        <!-- Temperature Converter -->
+        <div class="converter-card">
+          <h2>Temperature Converter</h2>
+          <p>Convert Celsius, Fahrenheit, Kelvin easily.</p>
+          <input type="number" id="temp-input" placeholder="Enter value">
+          <select id="temp-from">
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+          </select>
+          <select id="temp-to">
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+          </select>
+          <p>Result: <span id="temp-result">0</span></p>
+          <button onclick="resetConverter('temp')">Reset</button>
+        </div>
+
+        <!-- Area Converter -->
+        <div class="converter-card">
+          <h2>Area Converter</h2>
+          <p>Convert square meter, square kilometer, acre, hectare, square mile.</p>
+          <input type="number" id="area-input" placeholder="Enter value">
+          <select id="area-from">
+            <option value="sqm">Square Meter</option>
+            <option value="sqkm">Square Kilometer</option>
+            <option value="acre">Acre</option>
+            <option value="hectare">Hectare</option>
+            <option value="sqmi">Square Mile</option>
+          </select>
+          <select id="area-to">
+            <option value="sqm">Square Meter</option>
+            <option value="sqkm">Square Kilometer</option>
+            <option value="acre">Acre</option>
+            <option value="hectare">Hectare</option>
+            <option value="sqmi">Square Mile</option>
+          </select>
+          <p>Result: <span id="area-result">0</span></p>
+          <button onclick="resetConverter('area')">Reset</button>
+        </div>
+
+        <!-- Volume Converter -->
+        <div class="converter-card">
+          <h2>Volume Converter</h2>
+          <p>Convert liter, milliliter, cubic meter, gallon, pint.</p>
+          <input type="number" id="volume-input" placeholder="Enter value">
+          <select id="volume-from">
+            <option value="l">Liter</option>
+            <option value="ml">Milliliter</option>
+            <option value="m3">Cubic Meter</option>
+            <option value="gallon">Gallon</option>
+            <option value="pint">Pint</option>
+          </select>
+          <select id="volume-to">
+            <option value="l">Liter</option>
+            <option value="ml">Milliliter</option>
+            <option value="m3">Cubic Meter</option>
+            <option value="gallon">Gallon</option>
+            <option value="pint">Pint</option>
+          </select>
+          <p>Result: <span id="volume-result">0</span></p>
+          <button onclick="resetConverter('volume')">Reset</button>
+        </div>
+
+        <!-- Speed Converter -->
+        <div class="converter-card">
+          <h2>Speed Converter</h2>
+          <p>Convert km/h, m/s, mph easily.</p>
+          <input type="number" id="speed-input" placeholder="Enter value">
+          <select id="speed-from">
+            <option value="kmh">Km/h</option>
+            <option value="ms">m/s</option>
+            <option value="mph">mph</option>
+          </select>
+          <select id="speed-to">
+            <option value="kmh">Km/h</option>
+            <option value="ms">m/s</option>
+            <option value="mph">mph</option>
+          </select>
+          <p>Result: <span id="speed-result">0</span></p>
+          <button onclick="resetConverter('speed')">Reset</button>
+        </div>
+
+        <!-- Time Converter -->
+        <div class="converter-card">
+          <h2>Time Converter</h2>
+          <p>Convert seconds, minutes, hours, days.</p>
+          <input type="number" id="time-input" placeholder="Enter value">
+          <select id="time-from">
+            <option value="s">Second</option>
+            <option value="min">Minute</option>
+            <option value="h">Hour</option>
+            <option value="d">Day</option>
+          </select>
+          <select id="time-to">
+            <option value="s">Second</option>
+            <option value="min">Minute</option>
+            <option value="h">Hour</option>
+            <option value="d">Day</option>
+          </select>
+          <p>Result: <span id="time-result">0</span></p>
+          <button onclick="resetConverter('time')">Reset</button>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Easy Unit Converter</h2>
+      <p>This website helps you convert various units quickly and easily. Modern design, responsive layout, and multiple converters in one place.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>For queries or suggestions, email us at <a href="mailto:example@email.com">example@email.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Easy Unit Converter. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
